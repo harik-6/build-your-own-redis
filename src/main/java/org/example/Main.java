@@ -1,18 +1,14 @@
 package org.example;
 
+import org.example.redis.RedisServer;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-//        MultiThreadedServer multiThreadedServer = new MultiThreadedServer();
-//        try {
-//            multiThreadedServer.startServer();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-        SingleThreadedServer singleThreadedServer = new SingleThreadedServer();
+        RedisServer redisServer = new RedisServer();
         try {
-            singleThreadedServer.startServer();
-        }catch (Exception e){
+            redisServer.startServer();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -9,7 +9,7 @@ public class MultiThreadedServer {
 
     public void startServer() throws IOException {
         System.out.println("Starting server at port 8000 running on thread " + Thread.currentThread().getId());
-        server = new ServerSocket(8000);
+        server = new ServerSocket(8001);
         while (true) {
             System.out.println("Waiting for a client ...");
             Socket client = server.accept();

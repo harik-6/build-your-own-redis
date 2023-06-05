@@ -1,11 +1,11 @@
-package org.example;
+package org.example.redis;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandParser {
+public class RedisCommandParser {
 
     public List<String> parseInput(Socket client) {
         int value = -1;
@@ -26,6 +26,9 @@ public class CommandParser {
                     System.exit(1);
                 }
             } while (value != -1 && value != '\n');
+            if(value==-1) {
+                return List.of("*1","EXIT");
+            }
             if(wordsRead==1) {
                 wordsToRead = 1 + ((command.charAt(1) - '0') * 2);
             }
